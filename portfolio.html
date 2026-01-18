@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Architect & Startup Founder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+    .socials {
+    display: flex;
+    flex-wrap: wrap; /* Mobil ekranda tugmalar pastga tushishi uchun */
+    gap: 15px;
+    align-items: center;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* GitHub Effekti */
+.github:hover {
+    background: #333;
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* LinkedIn Effekti */
+.linkedin:hover {
+    background: #0077b5;
+    border-color: #00d2ff;
+    box-shadow: 0 0 20px rgba(0, 119, 181, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Telegram Effekti - Maxsus Ko'k Neon */
+.telegram:hover {
+    background: #229ED9;
+    border-color: #74ccf4;
+    box-shadow: 0 0 20px rgba(34, 158, 217, 0.5);
+    transform: translateY(-3px);
+}
+
+.social-btn i {
+    font-size: 1.3rem;
+}
+
+/* Kichik ekranlarda tugmalarni ixchamlashtirish */
+@media (max-width: 650px) {
+    .social-btn span {
+        display: none;
+    }
+    .social-btn {
+        padding: 12px;
+    }
+}
+        :root {
+            --primary: #00ff88; /* Neon yashil - Startap va energiya */
+            --secondary: #00d2ff; /* Moviy - Backend va ishonch */
+            --bg: #030712;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            background: radial-gradient(circle at 50% -20%, #1e293b, #030712);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Nav --- */
+        nav {
+            padding: 25px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span { color: var(--primary); }
+
+        /* --- Hero Section --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 0;
+            gap: 40px;
+        }
+
+        .hero-text h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            max-width: 550px;
+            margin-bottom: 35px;
+        }
+
+        .hero-image img {
+            width: 320px;
+            height: 320px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.2);
+            animation: morphing 8s ease-in-out infinite;
+        }
+
+        @keyframes morphing {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        }
+
+        /* --- Stats --- */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 100px;
+        }
+
+        .stat-item {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-item h3 { font-size: 2.5rem; color: var(--primary); margin-bottom: 5px; }
+
+        /* --- STARTUP SPECIAL SECTION --- */
+        .startup-card {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, rgba(0, 210, 255, 0.05) 100%);
+            border: 1px solid var(--primary);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .startup-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .badge {
+            background: var(--primary);
+            color: #000;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .startup-preview {
+            background: #000;
+            border-radius: 20px;
+            height: 300px;
+            overflow: hidden;
+            border: 1px solid #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800'); /* Preview rasm */
+            background-size: cover;
+            position: relative;
+        }
+
+        .startup-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .startup-overlay:hover { background: rgba(0,0,0,0.2); }
+
+        .prezi-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        .prezi-link:hover { border-bottom-color: var(--primary); }
+
+        /* --- Skills & Projects --- */
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .skills-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 100px;
+        }
+
+        .skill-tag {
+            background: var(--card-bg);
+            padding: 12px 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover { border-color: var(--primary); transform: translateY(-3px); }
+        .skill-tag i { color: var(--secondary); }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 100px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.4s;
+        }
+
+        .project-card:hover { transform: translateY(-10px); border-color: var(--secondary); }
+        .project-img { width: 100%; height: 220px; object-fit: cover; }
+        .project-body { padding: 25px; }
+
+        .btn {
+            background: var(--primary);
+            color: #000;
+            padding: 14px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn:hover { box-shadow: 0 0 25px rgba(0, 255, 136, 0.4); }
+
+        /* --- Footer --- */
+        footer {
+            padding: 80px 0 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero, .startup-content { flex-direction: column; text-align: center; grid-template-columns: 1fr; }
+            .hero-text h1 { font-size: 2.8rem; }
+            .startup-preview { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav>
+        <div class="logo">BACKEND<span>DEV</span></div>
+        <div class="socials">
+    <a href="https://github.com/hab2bulo" target="_blank" class="social-btn github">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+    </a>
+
+    <a href="https://www.linkedin.com/in/habibullo-komilov-7b2a703a5/" target="_blank" class="social-btn linkedin">
+        <i class="fab fa-linkedin"></i>
+        <span>LinkedIn</span>
+    </a>
+
+    <a href="https://t.me/hab2bulo" target="_blank" class="social-btn telegram">
+        <i class="fab fa-telegram"></i>
+        <span>Telegram</span>
+    </a>
+</div>
+    </nav>
+    <section class="hero">
+        <div class="hero-text">
+            <div class="badge">BACKEND ARCHITECT</div>
+            <h1>Python & Django Expert</h1>
+            <p>Men murakkab backend tizimlari, startap loyihalar va yuqori hafsizlikka ega API'lar ishlab chiqaman. Har bir loyihada toza kod va xavfsizlikni birinchi o'ringa qo'yaman.</p>
+            <a href="https://t.me/habibullokomilov" class="btn">Loyiha boshlash <i class="fas fa-paper-plane"></i></a>
+        </div>
+        <div class="hero-image">
+            <img src="Photo.jpg" alt="Developer">
+        </div>
+    </section>
+    <div class="stats-bar">
+        <div class="stat-item">
+            <h3>3+</h3>
+            <p>Yillik Tajriba</p>
+        </div>
+        <div class="stat-item">
+            <h3>10+</h3>
+            <p>Muvaffaqiyatli Loyihalar</p>
+        </div>
+        <div class="stat-item">
+            <h3>1</h3>
+            <p>Startap Asoschisi</p>
+        </div>
+    </div>
+    <section class="startup-card">
+        <div class="startup-content">
+            <div class="startup-info">
+                <div class="badge" style="background: var(--secondary);">STARTUP PROJECT</div>
+                <h2 style="font-size: 2.5rem; margin-bottom: 15px; font-family: 'Space Grotesk';">Startap Loyiham</h2>
+                <p style="color: var(--text-dim); margin-bottom: 20px;">
+                    Ushbu loyiha Python va Django yordamida yaratilgan bo'lib, bozorning real muammolarini hal qilishga yo'naltirilgan. 
+                    Tizim to'liq mikroservisli va masshtablanuvchan. Tizim ishlashga optimallashtirilgan va yuqori yuklamalarni boshqarishga qodir. (ammo Hozirda serverda joylashmagan)Lekin loyiha ishlashga tayyor va demo taqdimot uchun Prezi havolasi quyida keltirilgan.
+                </p>
+                <div style="margin-bottom: 20px;">
+                    <span style="color: var(--primary); font-weight: 700;">Stack:</span> Python, Django, PostgreSQL, HTML/CSS/JS.
+                </div>
+                <a href="https://prezi.com/view/Jgw3We30pGZGvsKM9mZz/" target="_blank" class="prezi-link">
+                    Loyihani ko'rish (Taqdimot) <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="startup-preview">
+                <div class="startup-overlay">
+                    <i class="fas fa-rocket" style="font-size: 3.5rem; color: var(--primary);"></i>
+                    <p style="margin-top: 15px; font-weight: 700;">Prezi Presentation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <h2 class="section-title">Texnologik Stack</h2>
+    <div class="skills-wrap">
+        <div class="skill-tag"><i class="fab fa-python"></i> Python / Django</div>
+        <div class="skill-tag"><i class="fas fa-database"></i> PostgreSQL / MySQL</div>
+        <div class="skill-tag"><i class="fab fa-docker"></i> Docker / DevOps</div>
+        <div class="skill-tag"><i class="fab fa-js"></i> JavaScript (JS)</div>
+        <div class="skill-tag"><i class="fas fa-code"></i> HTML / CSS / UI</div>
+        <div class="skill-tag"><i class="fas fa-bolt"></i> Redis / Celery</div>
+    </div>
+    <h2 class="section-title">Boshqa Loyihalar</h2>
+    <div class="project-grid">
+        <div class="project-card">
+          <img src="https://chartio.com/images/blog/how-to-create-a-web-analytics-dashboard/how-to-create-a-web-analytics-dashboard-0.png" class="project-img" alt="Analytics Dashboard">
+            <div class="project-body">
+                <h3>Analytics Dashboard</h3>
+                <p style="color: var(--text-dim); margin: 10px 0;">Ma'lumotlarni real vaqtda tahlil qiluvchi backend tizimi.</p>
+                <div style="font-size: 0.8rem; color: var(--secondary);">Django / Chart.js / Redis</div>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80" class="project-img" alt="Backend Project">
+            <div class="project-body">
+                <h3>E-Commerce Backend</h3>
+                <p style="color: var(--text-dim); margin: 10px 0;">Savdo platformasi uchun to'liq API va to'lov tizimi integratsiyasi.</p>
+                <div style="font-size: 0.8rem; color: var(--secondary);">FastAPI / PostgreSQL / Stripe</div>
+            </div>
+        </div>
+    </div>
+    <footer id="contact">
+        <h2 style="margin-bottom: 20px;">Bog'lanish uchun</h2>
+        <p style="color: var(--text-dim); margin-bottom: 30px;">Yangi g'oya yoki takliflaringiz bormi? Keling, gaplashamiz.</p>
+        <div class="socials" style="margin-bottom: 30px;">
+            <a href="#" style="color: var(--primary); font-size: 2rem; margin: 0 15px;"><i class="fab fa-telegram"></i></a>
+            <a href="#" style="color: var(--primary); font-size: 2rem; margin: 0 15px;"><i class="fab fa-github"></i></a>
+        </div>
+        <p style="color: #444; font-size: 0.9rem;">&copy; 2026 Professional Portfolio. Barcha huquqlar Python orqali himoyalangan.</p>
+    </footer>
+</div>
+
+<script>
+    // Reveal on scroll animation
+    const reveal = () => {
+        const elements = document.querySelectorAll('.stat-item, .startup-card, .project-card, .skill-tag');
+        elements.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+            const elementVisible = 100;
+            if (elementTop < windowHeight - elementVisible) {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // Initial state
+    document.querySelectorAll('.stat-item, .startup-card, .project-card, .skill-tag').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(40px)';
+        el.style.transition = 'all 0.8s ease-out';
+    });
+
+    window.addEventListener('scroll', reveal);
+    reveal(); // Run once on load
+</script>
+
+</body>
+</html>
